@@ -119,6 +119,9 @@ export namespace Components {
     'floating': boolean;
     'theme': 'alert' | 'warning' | 'success' | 'info';
   }
+  interface AcBrandButton {
+    'theme': string;
+  }
   interface AcButton {
     /**
     * The HTML5 native disable prop.
@@ -165,7 +168,10 @@ export namespace Components {
     */
     'type': 'button' | 'submit' | 'reset';
   }
-  interface AcCard {}
+  interface AcCard {
+    'compact': boolean;
+    'theme': string;
+  }
   interface AcCheck {
     /**
     * The actual checked state.
@@ -387,6 +393,10 @@ export namespace Components {
     * The native HTMLInputElement pattern attribute.
     */
     'pattern': string;
+    /**
+    * The native HTMLInputElement placeholder attribute.
+    */
+    'placeholder': string;
     /**
     * The native HTMLInputElement required attribute.
     */
@@ -928,7 +938,14 @@ export namespace Components {
     'value': string;
   }
   interface AcUpload {
+    /**
+    * Disabled upload files.
+    */
+    'disabled': boolean;
     'handleClick': () => Promise<void>;
+    /**
+    * The name to native input.
+    */
     'name': string;
     'removeFiles': () => Promise<void>;
     /**
@@ -962,6 +979,12 @@ declare global {
   var HTMLAcBadgeElement: {
     prototype: HTMLAcBadgeElement;
     new (): HTMLAcBadgeElement;
+  };
+
+  interface HTMLAcBrandButtonElement extends Components.AcBrandButton, HTMLStencilElement {}
+  var HTMLAcBrandButtonElement: {
+    prototype: HTMLAcBrandButtonElement;
+    new (): HTMLAcBrandButtonElement;
   };
 
   interface HTMLAcButtonElement extends Components.AcButton, HTMLStencilElement {}
@@ -1177,6 +1200,7 @@ declare global {
     'ac-autocomplete': HTMLAcAutocompleteElement;
     'ac-avatar': HTMLAcAvatarElement;
     'ac-badge': HTMLAcBadgeElement;
+    'ac-brand-button': HTMLAcBrandButtonElement;
     'ac-button': HTMLAcButtonElement;
     'ac-card': HTMLAcCardElement;
     'ac-check': HTMLAcCheckElement;
@@ -1286,6 +1310,9 @@ declare namespace LocalJSX {
     'floating'?: boolean;
     'theme'?: 'alert' | 'warning' | 'success' | 'info';
   }
+  interface AcBrandButton extends JSXBase.HTMLAttributes<HTMLAcBrandButtonElement> {
+    'theme'?: string;
+  }
   interface AcButton extends JSXBase.HTMLAttributes<HTMLAcButtonElement> {
     /**
     * The HTML5 native disable prop.
@@ -1332,7 +1359,10 @@ declare namespace LocalJSX {
     */
     'type'?: 'button' | 'submit' | 'reset';
   }
-  interface AcCard extends JSXBase.HTMLAttributes<HTMLAcCardElement> {}
+  interface AcCard extends JSXBase.HTMLAttributes<HTMLAcCardElement> {
+    'compact'?: boolean;
+    'theme'?: string;
+  }
   interface AcCheck extends JSXBase.HTMLAttributes<HTMLAcCheckElement> {
     /**
     * The actual checked state.
@@ -1532,6 +1562,10 @@ declare namespace LocalJSX {
     * The native HTMLInputElement pattern attribute.
     */
     'pattern'?: string;
+    /**
+    * The native HTMLInputElement placeholder attribute.
+    */
+    'placeholder'?: string;
     /**
     * The native HTMLInputElement required attribute.
     */
@@ -2034,6 +2068,13 @@ declare namespace LocalJSX {
     'value'?: string;
   }
   interface AcUpload extends JSXBase.HTMLAttributes<HTMLAcUploadElement> {
+    /**
+    * Disabled upload files.
+    */
+    'disabled'?: boolean;
+    /**
+    * The name to native input.
+    */
     'name'?: string;
     /**
     * Event when a file is dropped.
@@ -2054,6 +2095,7 @@ declare namespace LocalJSX {
     'ac-autocomplete': AcAutocomplete;
     'ac-avatar': AcAvatar;
     'ac-badge': AcBadge;
+    'ac-brand-button': AcBrandButton;
     'ac-button': AcButton;
     'ac-card': AcCard;
     'ac-check': AcCheck;

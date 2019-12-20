@@ -17,6 +17,19 @@
 | `title`    | `title`    |             | `string`      | `undefined` |
 
 
+## Dependencies
+
+### Depends on
+
+- [ac-brand-button](../ac-brand-button)
+
+### Graph
+```mermaid
+graph TD;
+  ac-avatar --> ac-brand-button
+  style ac-avatar fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

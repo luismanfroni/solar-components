@@ -27,6 +27,7 @@ export class AcAvatar {
       >
         <a class="ac-avatar__native" href={this.href} target={this.target}>
           <div class="ac-avatar__image" style={{ backgroundImage: `url(${this.image})` }}/>
+          <ac-brand-button size={30} />
           <div class="ac-avatar__text">
             <span class="ac-avatar__title">{this.title}</span>
             <span class="ac-avatar__subtitle">{this.subtitle}</span>

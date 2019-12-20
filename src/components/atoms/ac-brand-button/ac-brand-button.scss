@@ -1,0 +1,23 @@
+@import "ac-brand-button.vars";
+
+ac-brand-button {
+  display: flex;
+  position: relative;
+
+  .ac-gauge-button__inner {
+    position: absolute;
+  }
+}
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Theme Variations
+// ---------------------------------------------------------------------------------------------------------------------
+
+@include brand-button-variations(".ac-brand-button--primary", "primary");
+@include brand-button-variations(".ac-brand-button--secondary", "secondary");
+@include brand-button-variations(".ac-brand-button--alert", "alert");
+@include brand-button-variations(".ac-brand-button--info", "info");
+@include brand-button-variations(".ac-brand-button--warning", "warning");
+@include brand-button-variations(".ac-brand-button--success", "success");
+@include brand-button-variations(".ac-brand-button--neutral", "neutral");
