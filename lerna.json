@@ -1,0 +1,11 @@
+{
+  "packages": [
+    "core"
+  ],
+  "version": "1.2.0",
+  "command": {
+    "publish": {
+      "message": "chore(release): publish %v"
+    }
+  }
+}
